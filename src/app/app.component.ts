@@ -6,10 +6,16 @@ import { Product } from './product.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  widthImg = 10;
   name = 'Nicolas';
   age = 18;
   img = 'https://www.w3schools.com/howto/img_avatar.png'
   btnDisabled = true;
+  register = {
+    name: '',
+    email: '',
+    password: ''
+  }
 
   person = {
     name: 'Nicolas',
@@ -19,6 +25,11 @@ export class AppComponent {
 
   names: string[] = ['nico','juli','santi']
   newName = '';
+  box = {
+    width: 100,
+    height: 100,
+    background: 'red'
+  }
   products: Product[] = [
     {
       name: 'EL mejor juguete',
@@ -76,4 +87,9 @@ addName(){
 deleteName(index: number){
 this.names.splice(index,1);
 }
+
+onRegister(){
+console.log(this.register)
+}
+
 }
